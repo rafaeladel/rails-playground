@@ -1,0 +1,8 @@
+<div class="post">
+  <p>Title: <%= p.title %></p>
+  <p>Content: <%= p.content %></p>
+  <p>
+    <%= link_to "edit", edit_post_path(p) %>
+    <%= link_to "delete", p, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </p>
+</div>

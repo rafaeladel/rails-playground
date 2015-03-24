@@ -1,0 +1,10 @@
+<%= link_to "new", new_post_path %>
+<hr />
+<% @posts.each do |p| %>
+    <%= render 'posts/post', p: p %>
+    <hr />
+<% end %>
+
+<% content_for :javascripts do %>
+    <%= javascript_include_tag 'index_page' %>
+<% end %>
