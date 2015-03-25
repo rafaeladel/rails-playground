@@ -21,6 +21,14 @@ class PostsControllerTest < ActionController::TestCase
     assert_redirected_to posts_url
   end
 
+  test "invalid new post" do
+    assert_no_difference 'Post.count' do
+      post :create, post: {title: " ", content: "new content"}
+    end
+    post = assigns(:post)
+    assert_not post.valid?
+  end
+
   test "ajax post new" do
     assert_difference "Post.count", 1 do
       xhr :post, :create, post: {title: "new titleqqq", content: "new contentss"}

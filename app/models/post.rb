@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
   default_scope { order created_at: :desc }
-
-  self.per_page = 3
+  validates :title, presence: true
+  validates :content, presence: true
 end

@@ -7,8 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<div class="container main_wrapper">
 <%= yield %>
+</div>
 <%= javascript_include_tag "application" %>
 <%= yield :javascripts %>
 </body>

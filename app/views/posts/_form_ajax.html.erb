@@ -1,8 +1,16 @@
-<%= form_for(@post, remote: true) do |f| %>
-
+<%= form_for @post, remote: true, class: "form-horizontal" do |f| %>
+    <% if @post.errors.any? %>
+        <div class="alert alert-danger">
+          <ul>
+            <% @post.errors.full_messages.each do |err| %>
+                <li><%= err %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
     <%= render "shared/form", f: f %>
-
     <div>
-      <%= f.submit "Add" %>
+      <%= f.submit "Add", class: "btn btn-primary" %>
     </div>
+
 <% end %>

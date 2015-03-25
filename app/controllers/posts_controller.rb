@@ -1,8 +1,8 @@
 class PostsController < ApplicationController
+  before_action :get_all, only: [:index, :create, :destroy]
 
   def index
     @post = Post.new
-    @posts = Post.paginate(page: params[:page])
   end
 
   def new
@@ -12,7 +12,6 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      @posts = Post.paginate(page: params[:page])
       @post = Post.new
       respond_to do |format|
         format.html { redirect_to posts_url}
@@ -42,7 +41,6 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    @posts = Post.paginate(page: params[:page])
     respond_to do |format|
       format.html { redirect_to posts_url}
       format.js
@@ -52,5 +50,9 @@ class PostsController < ApplicationController
   private
   def post_params
     params.require(:post).permit(:title, :content)
+  end
+
+  def get_all
+    @posts = Post.paginate(page: params[:page], per_page: 4)
   end
 end

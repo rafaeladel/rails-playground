@@ -25,6 +25,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'mysql2'
 
+gem "bootstrap-sass"
+gem "autoprefixer-rails"
+
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 
