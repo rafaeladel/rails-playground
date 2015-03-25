@@ -1,10 +1,13 @@
-<%= link_to "new", new_post_path %>
-<hr />
-<% @posts.each do |p| %>
-    <%= render 'posts/post', p: p %>
-    <hr />
-<% end %>
+<div class="form_wrapper">
+<%= render 'posts/form_ajax' %>
+</div>
 
-<% content_for :javascripts do %>
-    <%= javascript_include_tag 'index_page' %>
-<% end %>
+<hr/>
+<div class="result"><p></p></div>
+
+<div class="posts_wrapper">
+<%= render 'posts/post', posts: @posts %>
+</div>
+  <% content_for :javascripts do %>
+      <%= javascript_include_tag 'index_page' %>
+  <% end %>

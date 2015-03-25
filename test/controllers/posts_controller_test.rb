@@ -21,6 +21,13 @@ class PostsControllerTest < ActionController::TestCase
     assert_redirected_to posts_url
   end
 
+  test "ajax post new" do
+    assert_difference "Post.count", 1 do
+      xhr :post, :create, post: {title: "new titleqqq", content: "new contentss"}
+    end
+    # assert_select '.result p', text: "Post added"
+  end
+
   test "edit post" do
     first_post = posts(:first)
     title = "www"

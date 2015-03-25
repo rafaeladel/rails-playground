@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
+
   def index
-    @posts = Post.all
+    @post = Post.new
+    @posts = Post.paginate(page: params[:page])
   end
 
   def new
@@ -10,9 +12,17 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_to posts_url
+      @posts = Post.paginate(page: params[:page])
+      @post = Post.new
+      respond_to do |format|
+        format.html { redirect_to posts_url}
+        format.js
+      end
     else
-      render 'posts/new'
+      respond_to do |format|
+        format.html { render 'posts/new' }
+        format.js
+      end
     end
   end
 
@@ -32,7 +42,11 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to posts_url
+    @posts = Post.paginate(page: params[:page])
+    respond_to do |format|
+      format.html { redirect_to posts_url}
+      format.js
+    end
   end
 
   private
