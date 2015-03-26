@@ -16,7 +16,7 @@ class PostsController < ApplicationController
       # render json: @posts
       respond_to do |format|
         format.html { redirect_to posts_url}
-        format.json { render json: @posts }
+        format.js
       end
     else
       respond_to do |format|
