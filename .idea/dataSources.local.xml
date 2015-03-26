@@ -7,8 +7,6 @@
       <schema-pattern>playground_db.*</schema-pattern>
       <default-schemas>playground_db.*</default-schemas>
     </data-source>
-    <data-source name="Rails rails_playground: test" uuid="e9571d0a-6a13-4141-82d5-f2e975165fb7">
-      <first-sync>true</first-sync>
-    </data-source>
+    <data-source name="Rails rails_playground: test" uuid="e9571d0a-6a13-4141-82d5-f2e975165fb7" />
   </component>
 </project>

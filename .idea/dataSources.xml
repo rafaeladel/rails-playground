@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="2483164957">
+  <component name="DataSourceManagerImpl" format="xml" hash="4268015739">
     <data-source source="LOCAL" name="Rails rails_playground: development" uuid="845690dc-db7f-42bc-9662-0b966113828c">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
@@ -20,7 +20,14 @@
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/test.sqlite3</jdbc-url>
-      <libraries />
+      <libraries>
+        <library>
+          <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/xerial-sqlite-license.txt</url>
+        </library>
+        <library>
+          <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/sqlite-jdbc-3.7.6.3-20110609.081603-3.jar</url>
+        </library>
+      </libraries>
     </data-source>
   </component>
 </project>

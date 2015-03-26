@@ -13,13 +13,18 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     if @post.save
       @post = Post.new
+      # render json: @posts
       respond_to do |format|
         format.html { redirect_to posts_url}
-        format.js
+        format.json {
+          render json: {
+                     view:
+                 }
+        }
       end
     else
       respond_to do |format|
-        format.html { render 'posts/new' }
+        format.html { render 'posts/index' }
         format.js
       end
     end
@@ -49,7 +54,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :content)
+    params.require(:post).permit(:title, :content, :image)
   end
 
   def get_all
