@@ -157,6 +157,8 @@ GEM
     notiffany (0.0.6)
       nenv (~> 0.1)
       shellany (~> 0.0)
+    plupload-rails (1.2.1)
+      rails (>= 3.1)
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -193,7 +195,6 @@ GEM
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
     rdoc (4.2.0)
-    remotipart (1.2.1)
     ruby-progressbar (1.7.1)
     sass (3.4.13)
     sass-rails (5.0.1)
@@ -255,8 +256,8 @@ DEPENDENCIES
   mini_magick
   minitest-reporters
   mysql2
+  plupload-rails
   rails (= 4.2.0)
-  remotipart
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring

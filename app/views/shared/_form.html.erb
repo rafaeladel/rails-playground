@@ -10,5 +10,8 @@
 
 <div class="form-group">
   <%= f.label :image, class: "control-label" %>
-  <%= f.file_field :image %>
+  <%= f.button :image, id: "imageBrowse" do %>
+    Select image
+  <% end %>
+  <div id="uploaderWrapper"></div>
 </div>

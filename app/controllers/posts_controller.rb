@@ -13,11 +13,11 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     if @post.save
       @post = Post.new
-      # render json: @posts
-      respond_to do |format|
-        format.html { redirect_to posts_url}
-        format.js
-      end
+        # respond_to do |format|
+        #   format.html { redirect_to posts_url}
+        #   format.js { render json: @posts }
+        # end
+      render partial: 'posts/post', posts: @posts
     else
       respond_to do |format|
         format.html { render 'posts/index' }

@@ -4,8 +4,6 @@
     <data-source name="Rails rails_playground: development" uuid="845690dc-db7f-42bc-9662-0b966113828c">
       <user-name>root</user-name>
       <user-password>dfd8dfc5dfc5dfde</user-password>
-      <schema-pattern>playground_db.*</schema-pattern>
-      <default-schemas>playground_db.*</default-schemas>
     </data-source>
     <data-source name="Rails rails_playground: test" uuid="e9571d0a-6a13-4141-82d5-f2e975165fb7" />
   </component>

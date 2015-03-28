@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require jquery.remotipart
+//= require moxie
+//= require plupload.dev
 //= stub index_page
 //= require_directory .
